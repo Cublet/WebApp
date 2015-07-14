@@ -2,6 +2,7 @@
 	'use strict';
 
 	var gulp = require('gulp'),
+		colors = require('colors'),
 		gulpSass = require('gulp-sass'),
 		gulpWatch = require('gulp-watch'),
 		gulpUglify = require('gulp-uglify'),
@@ -24,6 +25,7 @@
 	
 	function sassWatchTask() {
 		gulpWatch('./styles/scss/**/*.scss', function (cb) {
+			console.log(colors.yellow.underline('SASS RUN >'));
 			sassTask();
 		});
 	}
@@ -38,6 +40,7 @@
 	
 	function jsHintWatchTask() {
 		gulpWatch('./app/**/*.js', function () {
+			console.log(colors.yellow.underline('JS Hint RUN >'));
 			jsHintTask();
 		});
 	}
@@ -51,6 +54,7 @@
 				  './app/**/!(*.module|*.config|*.run).js'])
 			.pipe(gulpSourceMaps.init())
 			.pipe(gulpConcat('./dist/app.min.js'))
+			.pipe(gulp.dest('./dist'))
 			.pipe(gulpUglify())
 			.pipe(gulpSourceMaps.write())
 			.pipe(gulp.dest('./dist'));
@@ -58,6 +62,7 @@
 	
 	function jsUglifyConcatWatchTask() {
 		gulpWatch('./app/**/*.js', function () {
+			console.log(colors.yellow.underline('JS Uglify/Concat RUN >'));
 			jsUglifyConcatTask();
 		});
 	}
