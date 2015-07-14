@@ -1,0 +1,36 @@
+{
+  "name": "cublet-webapp",
+  "version": "1.0.0",
+  "description": "Cublet is a web app that allows programming beginners to learn how to use the Wolfram Language. Cublet-WebApp handles all the front-end client-side logic.",
+  "main": "index.html",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cublet/WebApp.git"
+  },
+  "keywords": [
+    "cublet",
+    "frontend",
+    "angular",
+    "spa",
+    "wolfram"
+  ],
+  "author": "Alastair Paragas <alastairparagas@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Cublet/WebApp/issues"
+  },
+  "homepage": "https://github.com/Cublet/WebApp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.3.1",
+    "jshint-stylish": "^2.0.1"
+  }
+}
