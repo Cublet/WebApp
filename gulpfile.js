@@ -24,6 +24,7 @@
 	}
 	
 	function sassWatchTask() {
+		sassTask();
 		gulpWatch('./styles/**/*.scss', function (cb) {
 			console.log(colors.yellow.underline('SASS RUN >'));
 			sassTask();
@@ -39,6 +40,7 @@
 	}
 	
 	function jsHintWatchTask() {
+		jsHintTask();
 		gulpWatch('./app/**/*.js', function () {
 			console.log(colors.yellow.underline('JS Hint RUN >'));
 			jsHintTask();
@@ -60,6 +62,7 @@
 	}
 	
 	function jsUglifyConcatWatchTask() {
+		jsUglifyConcatTask();
 		gulpWatch('./app/**/*.js', function () {
 			console.log(colors.yellow.underline('JS Uglify/Concat RUN >'));
 			jsUglifyConcatTask();
