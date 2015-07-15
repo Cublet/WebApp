@@ -30,7 +30,7 @@
     "Bootflat": "~2.0.4",
     "jquery": "~2.1.4",
     "angular-ui-router": "~0.2.15",
-    "fuss": "~1.2.5",
-    "lodash": "~3.10.0"
+    "lodash": "~3.10.0",
+    "ng-facebook": "~0.1.6"
   }
 }
