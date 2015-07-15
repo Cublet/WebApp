@@ -16,7 +16,8 @@
 			.src('./styles/**/*.scss')
 			.pipe(gulpSourceMaps.init())
 			.pipe(gulpSass({
-				outputStyle: 'compressed'
+				outputStyle: 'compressed',
+				errLogToConsole: true
 			}))
 			.pipe(gulpSourceMaps.write())
 			.pipe(gulp.dest('./dist'));
