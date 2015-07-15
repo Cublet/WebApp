@@ -18,13 +18,12 @@
 			.pipe(gulpSass({
 				outputStyle: 'compressed'
 			}))
-			.pipe(gulpConcat('./dist/'))
 			.pipe(gulpSourceMaps.write())
 			.pipe(gulp.dest('./dist'));
 	}
 	
 	function sassWatchTask() {
-		gulpWatch('./styles/scss/**/*.scss', function (cb) {
+		gulpWatch('./styles/**/*.scss', function (cb) {
 			console.log(colors.yellow.underline('SASS RUN >'));
 			sassTask();
 		});
@@ -54,10 +53,9 @@
 				  './app/**/!(*.module|*.config|*.run).js'])
 			.pipe(gulpSourceMaps.init())
 			.pipe(gulpConcat('./dist/app.min.js'))
-			.pipe(gulp.dest('./dist'))
 			.pipe(gulpUglify())
 			.pipe(gulpSourceMaps.write())
-			.pipe(gulp.dest('./dist'));
+			.pipe(gulp.dest(''));
 	}
 	
 	function jsUglifyConcatWatchTask() {
