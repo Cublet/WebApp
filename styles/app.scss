@@ -1,0 +1,94 @@
+@import "bower_components/Bootflat/bootflat/scss/bootflat/global";
+@import "_variables";
+
+@import "bower_components/Bootflat/bootflat/scss/bootflat/typography";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/button";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/button_group";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/label_badge";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/tooltip";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/popover";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/progress";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/breadcrumb";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/pagination";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/pager";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/form";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/stepper";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/selecter";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/checkbox_radio";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/toggle";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/calendar";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/pricing";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/alert";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/tab";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/pill";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/navbar";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/list";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/media_list";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/modal";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/well";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/thumbnail";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/jumbotron";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/panel";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/accordion";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/footer";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/timeline";
+@import "bower_components/Bootflat/bootflat/scss/bootflat/dropdown";
+
+
+
+.navbar {
+	margin-bottom: 0px;
+	* {
+		color: white !important;
+	}
+}
+
+#leaderboard {
+	background-image: url('../images/pattern.png');
+	padding-bottom: 50px;
+	h1, h2, small {
+		text-shadow: 0px 1px 2px #777;
+		color: $lightgray-light;
+	}
+}
+
+.container:first-child .row:first-child {
+	padding-top: 30px;
+}
+.container:last-child .row:last-child {
+	padding-bottom: 50px;
+}
+
+.row {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+body {
+	background: #eee;
+	font-size: 130%;
+}
+.row > div > p {
+	line-height: 175%;
+	font-size: 130%;
+}
+
+.footer img{
+	margin-bottom: 10px;
+}
+
+#page {
+	display: block;
+	min-height: 65vh;
+	div[class*="col-"] > ul li {
+		font-size: 130%;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	small {
+		color: #444;	
+	}
+}
