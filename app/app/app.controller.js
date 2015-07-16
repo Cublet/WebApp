@@ -3,10 +3,19 @@
 	
 	var angular = window.angular;
 	
-	function AppController(AuthFactory) {
+	function AppController($scope, $state, AuthFactory) {
+		
+		$scope.isLoggedIn = AuthFactory.isLoggedIn;
+		
+		$scope.user = AuthFactory.getUser();
+		
+		$scope.logout = function logout() {
+			AuthFactory.logout();
+			$state.go('cublet.home');
+		};
 		
 	}
-	AppController.$inject = ['AuthFactory'];
+	AppController.$inject = ['$scope', '$state', 'AuthFactory'];
 	
 	angular
 		.module('cublet')
