@@ -4,6 +4,6 @@
 	var angular = window.angular;
 	
 	angular
-		.module('cublet.auth', ['ui.router', 'cublet.config']);
+		.module('cublet.auth', ['ui.router', 'ngFacebook', 'cublet.config']);
 	
 }());

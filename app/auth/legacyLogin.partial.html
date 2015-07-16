@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="alert alert-danger" ng-show="showError()">{{ loginErrors }}</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading text-center">
+					Log in by Email
+				</div>
+				
+				<div class="panel-body">
+					<form name="loginForm" ng-submit="legacyLogin()" novalidate>
+						<div class="form-group" ng-class="validate('useridentifier')">
+							<label for="email">Email/Username</label>
+							<input id="email" type="email" class="form-control" 
+								   ng-model="user.useridentifier" name="useridentifier" 
+								   placeholder="Email Address/Username" required>
+						</div>
+						<div class="form-group" ng-class="validate('userpassword')">
+							<label for="password">Password</label>
+							<input id="password" type="password" class="form-control" 
+								   ng-model="user.userpassword" name="userpassword" 
+								   placeholder="Password" ng-minlength="5" required>
+						</div>
+						<div class="alert alert-danger" ng-show="sbowError()">
+							{{ loginErrors }}
+						</div>
+						<button type="submit" class="btn btn-success" ng-disabled="loginForm.$invalid">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading text-center">
+					Log in by Facebook
+				</div>
+				<div class="panel-body text-center">
+					<a class="btn btn-primary" ui-sref="cublet.auth.facebookLogin">Login with Facebook</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

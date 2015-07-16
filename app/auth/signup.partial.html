@@ -1,0 +1,79 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="alert alert-success" ng-show="showSuccess()">Succesfully signed up!</div>
+			<div class="alert alert-danger" ng-show="showWarning()">There are errors on your signup information.</div>
+			<h2>
+				Sign Up for Cublet
+				<br>
+				<small>Signing up provides you the following benefits</small>
+			</h2>
+			<ul>
+				<li>Learn how to code using the powerful Wolfram Language.</li>
+				<li>Code using an intuitive block-like interface.</li>
+				<li>Share the code with fellow Cublet users as well as your various social media.</li>
+				<li>Follow other Cublet users and get news about their site activities.</li>
+				<li>Ask questions on the Cublet forums</li>
+				<li>And many more!</li>
+			</ul>
+			<br>
+			<p>
+				We do not sell your information to third-party entities. When you calculate or analyze a dataset 
+				with the Wolfram Language, there may be a chance that such data will be sent/stored to Wolfram's servers.
+			</p>
+		</div>
+		<div class="col-md-5 col-md-offset-1">
+			<div class="panel panel-primary">
+				<div class="panel-heading text-center">
+					Sign up with Facebook
+				</div>
+				<div class="panel-body text-center">
+					<a class="btn btn-primary" ui-sref="cublet.auth.facebookLogin">Sign up with Facebook</a>
+				</div>
+			</div>
+			<div class="panel panel-danger">
+				<div class="panel-heading text-center">
+					Sign up with Email
+				</div>
+				<div class="panel-body">
+					<form name="signupForm" ng-submit="legacySignup()" novalidate>
+						<div class="form-group" ng-class="validate('email')">
+							<label for="email">Email</label>
+							<input id="email" ng-model="user.email" name="email" 
+								   type="email" class="form-control" placeholder="Email Address" 
+								   required>
+						</div>
+						<div class="form-group" ng-class="validate('username')">
+							<label for="username">Username</label>
+							<input id="username" ng-model="user.username" name="username" 
+								   type="text" class="form-control" placeholder="Username" required>
+						</div>
+						<div class="form-group" ng-class="validate('name')">
+							<label for="name">Full Name</label>
+							<input id="name" ng-model="user.name" name="name" 
+								   type="text" class="form-control" placeholder="Full Name" required>
+						</div>
+						<div class="form-group" ng-class="validate('password')">
+							<label for="password">Password</label>
+							<input id="password" ng-model="user.password" name="password" 
+								   type="password" class="form-control" placeholder="Password"
+								   ng-minlength="5" required>
+						</div>
+						<div class="alert alert-danger" ng-show="showWarning()">
+							There are some errors on your signup information. Please correct them!
+							<ul>
+								<li ng-repeat="(inputName, message) in signupErrors">
+									{{message}}
+								</li>
+							</ul>
+						</div>
+						<div class="alert alert-success" ng-show="showSuccess()">
+							Succesfully signed up!
+						</div>
+						<button type="submit" class="btn btn-success" ng-disabled="signupForm.$invalid">Sign up with Cublet</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
