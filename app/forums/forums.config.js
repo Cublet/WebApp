@@ -24,7 +24,10 @@
 			.state('cublet.forums.edit', {
 				url: '/:id/edit',
 				controller: 'EditController',
-				templateUrl: 'app/forums/edit.partial.html'
+				templateUrl: 'app/forums/edit.partial.html',
+				data: {
+					authguard: true
+				}
 			});
 		
 	}

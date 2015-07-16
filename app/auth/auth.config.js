@@ -3,7 +3,8 @@
 	
 	var angular = window.angular;
 	
-	function config($stateProvider) {
+	function config($stateProvider, $httpProvider, $facebookProvider, 
+					AppConfig) {
 		
 		$stateProvider
 			.state('cublet.auth', {
@@ -12,23 +13,29 @@
 				template: '<ui-view/>'
 			})
 			.state('cublet.auth.legacyLogin', {
-				url: '/auth/login',
+				url: '/email',
 				controller: 'LegacyLoginController',
 				templateUrl: '/app/auth/legacyLogin.partial.html'
 			})
 			.state('cublet.auth.facebookLogin', {
-				url: '/auth/facebook',
-				controller: 'FacebookLoginController',
-				templateUrl: '/app/auth/facebookLogin.partial.html'
+				url: '/facebook',
+				controller: 'FacebookLoginController'
 			})
 			.state('cublet.auth.signup', {
-				url: '/auth/signup',
+				url: '/signup',
 				controller: 'SignupController',
 				templateUrl: '/app/auth/signup.partial.html'
 			});
 		
+		$httpProvider.interceptors.push('AuthHttpInterceptorFactory');
+		
+		$facebookProvider.setAppId(AppConfig.Facebook.appId);
+		$facebookProvider.setVersion(AppConfig.Facebook.version);
+		$facebookProvider.setPermissions("email");
+		
 	}
-	config.$inject = ['$stateProvider'];
+	config.$inject = ['$stateProvider', '$httpProvider', '$facebookProvider',
+					 'AppConfig'];
 	
 	angular
 		.module('cublet.auth')

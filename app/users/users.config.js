@@ -24,7 +24,10 @@
 			.state('cublet.users.edit', {
 				url: '/:id/edit',
 				controller: 'EditController',
-				templateUrl: 'app/users/edit.partial.html'
+				templateUrl: 'app/users/edit.partial.html',
+				data: {
+					authguard: true
+				}
 			});
 		
 	}

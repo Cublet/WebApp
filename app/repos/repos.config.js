@@ -24,7 +24,10 @@
 			.state('cublet.repos.edit', {
 				url: '/:id/edit',
 				controller: 'EditController',
-				templateUrl: '/app/repos/edit.partial.html'
+				templateUrl: '/app/repos/edit.partial.html',
+				data: {
+					authguard: true
+				}
 			});
 		
 	}
