@@ -11,7 +11,7 @@
 		function request(config) {
 			var token = AuthStorageFactory.getAuthToken();
 			if (token && config.url.indexOf(AppConfig.apiBaseUrl) === 0) {
-				config.headers.Authorization = 'Bearer ' + token;	
+				config.headers.Authorization = 'Bearer ' + token;
 			}
 			
 			return config;

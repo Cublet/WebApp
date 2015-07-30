@@ -29,6 +29,9 @@
 		
 		$httpProvider.interceptors.push('AuthHttpInterceptorFactory');
 		
+		$httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+		
 		$facebookProvider.setAppId(AppConfig.Facebook.appId);
 		$facebookProvider.setVersion(AppConfig.Facebook.version);
 		$facebookProvider.setPermissions("email");

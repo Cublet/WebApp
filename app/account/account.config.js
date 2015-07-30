@@ -8,7 +8,8 @@
 		$stateProvider
 			.state('cublet.account', {
 				abstract: true,
-				url: '/account'
+				url: '/account',
+				template: '<ui-view/>'
 			})
 			.state('cublet.account.edit', {
 				url: '/edit',

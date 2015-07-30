@@ -4,6 +4,6 @@
 	var angular = window.angular;
 	
 	angular
-		.module('cublet.account', ['ui.router']);
+		.module('cublet.account', ['ui.router', 'cublet.config']);
 	
 }());
